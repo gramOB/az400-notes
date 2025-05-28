@@ -1,1 +1,2 @@
-Just some notes as I study for az400
+# in progress
+## gJust some notes as I study for az400
