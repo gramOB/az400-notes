@@ -1,4 +1,6 @@
-# what are they
+# Githooks
+
+# Client Side hooks
 
 ### make sure bad code doesn't get committed locally, protecting the remote
 
@@ -111,3 +113,27 @@ fi
 ## post commit hooks
 
 - mainly usedf to generate messages and documentation
+
+```powershell
+#!C:/Program\ Files/Git/usr/bin/sh.exe
+# Set the recipient email address
+$recipient="your@email.com"
+# Set the subject of the email
+$subject="Git Commit Notification"
+# Set the body of the email
+$body="A new commit has been made to the repository."
+# Send the email notification
+Send-MailMessage -To $recipient -Subject $subject -Body $body -SmtpServer "your.smtp.server"
+```
+
+## commit to source control
+
+```powershell
+Git config --global core.hooksPath '~/.githooks'
+Git commit --no-verify # overwrite
+```
+
+
+# Server side hooks
+
+Azure Repos also provides server-side hooks to further augment the development process, including support for creating pull requests. For more information, see the Azure Repos [Service hooks events](https://learn.microsoft.com/en-us/azure/devops/service-hooks/events) reference.
